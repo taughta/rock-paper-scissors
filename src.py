@@ -1,8 +1,15 @@
 import os
 
 while True:
-    os.system('cls')
-    print("Welcome to the good ol' rock-paper-scissors game.\n")
+    print("""
+                          ####
+                      ############
+                ########################
+    ####R#O#C#K#####P#A#P#E#R######S#C#I#S#S#O#R#S###
+    
+    Welcome to the good ol' rock-paper-scissors game.
+    
+    """)
 
     try:
         print("""Player 1, choose your weapon:
@@ -40,6 +47,17 @@ while True:
     else:
         p2 = "SCISSORS"
 
+    if p1 == p2:
+        print("""
+        **********SAME WEAPON ERROR*************
+        
+        Snap! Both player chose the same weapon!
+        
+        **********SAME WEAPON ERROR*************
+        """)
+        continue
+
+
     playerSummed = player1 + player2
 
     os.system('cls')
@@ -74,6 +92,7 @@ while True:
     wannaPlay = str(input())
     assert (wannaPlay in yesAnswers or wannaPlay in noAnswers), "***ERROR! You must answer with 'yes' or 'no'."
     if wannaPlay in yesAnswers:
+        os.system('cls')
         continue
     else:
         break
